@@ -57,3 +57,9 @@ Finally in order to be able to interact with our cluster we need to install Kube
 To install Kubectl execute one of the following commands:
 
 `make get-kubectl-for-mac` or `make get-kubectl-for-linux`
+
+## 4. Destroy the cluster when done
+
+When we are done, we can easily destroy the cluster by running:
+
+`make destroy`
