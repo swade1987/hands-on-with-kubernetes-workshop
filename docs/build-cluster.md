@@ -38,7 +38,7 @@ master:
   load_balanced_short_name:
 ```
 
-Update the remainder of the IP address in the `kismatic-cluster.yaml` under `etcd` and `worker`.
+Update the remainder of the IP address in the `kismatic-cluster.yaml` under `etcd` and `worker`. You will also need to ensure that the absolute path referred to by `ssh_key` points to the location of the `ssh/cluster.pem` file in your cloned copy of the repository.
 
 Once you have filled in the YAML file execute the following command:
 
