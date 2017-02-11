@@ -7,7 +7,7 @@ These steps are to be executed from the boostrap node itself!
 The following command will download and install Kismatic and Kubectl
 
 ```
-$ cd hands-on-with-kubernetes-workshop
+$ cd kismatic-enterprise-toolkit-sandbox
 $ make get-dependencies
 ```
 
