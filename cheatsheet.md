@@ -15,7 +15,7 @@ Now execute the following command and leave it running ...
 NOTE: Copy the `worker1` ip address and the NodePort of the `hello-world` service before running the command!
 
 ```
-$ while true; do curl http://<worker ip>:<service NodePort>; sleep 1; done;
+$ watch curl http://<worker ip>:<service NodePort>
 ```
 
 ## Terminal 2
@@ -23,7 +23,7 @@ $ while true; do curl http://<worker ip>:<service NodePort>; sleep 1; done;
 Execute the following command and leave it running ...
 
 ```
-$ while true; do kubectl get pods; sleep 1; done;
+$ watch kubectl get pods
 ```
 
 ## Terminal 3
