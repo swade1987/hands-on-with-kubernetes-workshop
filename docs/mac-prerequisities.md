@@ -19,7 +19,7 @@ $ brew cask install terraform
 
 ## 2. Clone the repo
 
-Now clone the repo by executing `git clone https://github.com/swade1987/hands-on-with-kubernetes-workshop.git`
+Now clone the repo by executing `git clone https://github.com/apprenda/hands-on-with-kubernetes-workshop.git`
 
 ## 3. Digital Ocean account
 
