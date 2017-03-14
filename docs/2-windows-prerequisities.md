@@ -2,7 +2,7 @@
 
 ## 1. Terraform
 
-Open a Powershell window **as Administrator** and execute `Set-ExecutionPolicy unrestricted`
+Open a Powershell window **as Administrator** (right click on Powershell and select "Run as adminstrator") and execute `Set-ExecutionPolicy unrestricted`
 
 To locate the version of PowerShell you are running execute the following command:
 
