@@ -27,7 +27,6 @@ Once Chocolatey is installed execute the following commands:
 ```
 $ choco install terraform -y
 $ choco install git.install -y
-$ git clone https://github.com/apprenda/hands-on-with-kubernetes-workshop.git
 ```
 
 ## 2. Pageant
