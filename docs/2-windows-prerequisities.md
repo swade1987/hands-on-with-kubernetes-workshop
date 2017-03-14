@@ -27,7 +27,7 @@ Once Chocolatey is installed execute the following commands:
 ```
 $ choco install terraform -y
 $ choco install git.install -y
-$ git clone https://github.com/swade1987/hands-on-with-kubernetes-workshop.git
+$ git clone https://github.com/apprenda/hands-on-with-kubernetes-workshop.git
 ```
 
 ## 2. Pageant
@@ -36,7 +36,7 @@ Download and install Pageant (an SSH authentication agent) from [here](http://ww
 
 ## 3. Clone the repo
 
-Now clone the repo by executing `git clone https://github.com/swade1987/hands-on-with-kubernetes-workshop.git`
+Now clone the repo by executing `git clone https://github.com/apprenda/hands-on-with-kubernetes-workshop.git`
 
 ## 4. Digital Ocean account
 

@@ -36,7 +36,7 @@ spec:
             port: 80
           initialDelaySeconds: 30
           timeoutSeconds: 10
-        image: quay.io/swade1987/k8s-workshop-probes:1.1
+        image: quay.io/apprenda/k8s-workshop-probes:1.1
         resources:
           requests:
             cpu: 100m

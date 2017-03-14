@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - name: k8s-workshop-ingress
-        image: quay.io/swade1987/k8s-workshop-site:1.0
+        image: quay.io/apprenda/k8s-workshop-site:1.0
         resources:
           requests:
             cpu: 100m
