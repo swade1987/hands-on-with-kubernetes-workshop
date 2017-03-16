@@ -39,7 +39,7 @@ master:
   load_balanced_short_name:
 ```
 
-Update the remainder of the IP address in the `kismatic-cluster.yaml` under `etcd` and `worker`.
+Update the remainder of the IP address in the `kismatic-cluster.yaml` under `etcd`, 'ingress' and `worker`.
 
 ## Provision the cluster using Kismatic
 
