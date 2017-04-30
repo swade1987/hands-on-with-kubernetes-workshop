@@ -15,3 +15,9 @@ provision-cluster:
 
 vagrant-box:
 	cd vagrant && vagrant up
+
+ssh-into-vagrant-box:
+	cd vagrant && vagrant ssh
+
+destroy-vagrant-box:
+	cd vagrant && vagrant destroy -f
