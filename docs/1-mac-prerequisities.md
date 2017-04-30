@@ -10,11 +10,10 @@ If you don't already have [brew](http://brew.sh/) installed execute:
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-Then execute the following commands:
+Then execute the following command:
 
 ```
-$ brew tap unofficial-cask/hashicorp-tap https://github.com/unofficial-cask/hashicorp-tap.git
-$ brew install cask terraform
+$ brew install terraform
 ```
 
 ## 2. Clone the repo
