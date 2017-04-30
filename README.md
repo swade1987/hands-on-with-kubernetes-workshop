@@ -22,15 +22,4 @@ The presenter will go through a list of demos during the workshop.
 
 ## Destroying everything once finished
 
-To remove the droplets from Digital Ocean execute the following **from your virtual machine**.
-
-```
-$ cd /home/vagrant/hands-on-with-kubernetes-workshop/terraform
-$ terraform destroy --force
-```
-
-To remove the virtual machine **from your local machine** execute the following command:
-
-```
-$ make destroy-vagrant-box
-```
+A list of steps to clear down can be found [here](docs/6-clear-down.md)
