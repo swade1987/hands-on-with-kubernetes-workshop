@@ -26,9 +26,9 @@ If you are running PowerShell v3 or above execute the following command:
 $ iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex
 ```
 
-## 2. Vagrant and Git
+## 2. Install dependencies
 
-To install [Vagrant](https://www.vagrantup.com/) and Git execute the following commands:
+To install the necessary dependencies execute the following commands:
 
 ```
 $ choco install -y vagrant git.install virtualbox
