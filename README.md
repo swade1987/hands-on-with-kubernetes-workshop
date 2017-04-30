@@ -22,9 +22,9 @@ The presenter will go through a list of demos during the workshop.
 
 ## Destroying everything once finished
 
-To remove the droplets from Digital Ocean execute the following from your local machine.
+To remove the droplets from Digital Ocean execute the following **from your virtual machine**.
 
 ```
-$ cd terraform
+$ cd /home/vagrant/hands-on-with-kubernetes-workshop/terraform
 $ terraform destroy --force
 ```
