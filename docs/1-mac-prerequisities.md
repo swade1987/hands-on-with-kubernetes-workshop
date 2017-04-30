@@ -1,25 +1,39 @@
 # Prerequisities
 
-## 1. Terraform
+## 1. Install Brew
 
-To download and configure [Terraform](https://www.terraform.io/) please execute the following commands:
-
-If you don't already have [brew](http://brew.sh/) installed execute:
+If you don't already have [brew](http://brew.sh/) installed execute the following commands:
 
 ```
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+$ brew tap caskroom/cask
 ```
 
-Then execute the following command:
+## 2. Install Vagrant
+
+To install [Vagrant](https://www.vagrantup.com/) execute the following commands:
 
 ```
-$ brew install terraform
+$ brew tap unofficial-cask/hashicorp-tap https://github.com/unofficial-cask/hashicorp-tap.git
+$ brew install cask vagrant
 ```
 
-## 2. Clone the repo
+## 3. Install Virtualbox
 
-Now clone the repo by executing `git clone https://github.com/apprenda/hands-on-with-kubernetes-workshop.git`
+To install [Virtualbox](https://www.virtualbox.org/wiki/VirtualBox) execute the following commands:
 
-## 3. Digital Ocean account
+```
+$ brew cask install virtualbox
+```
+
+## 4. Clone the repo
+
+To clone the repo execute the following commands:
+
+```
+$ git clone https://github.com/apprenda/hands-on-with-kubernetes-workshop.git
+```
+
+## 5. Digital Ocean account
 
 You will also require an account on [https://www.digitalocean.com/](https://www.digitalocean.com/)

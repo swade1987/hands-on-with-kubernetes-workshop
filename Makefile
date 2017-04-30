@@ -12,3 +12,6 @@ provision-cluster:
 	cp generated/kubeconfig .
 	mkdir ~/.kube/
 	cp kubeconfig ~/.kube/config
+
+vagrant-box:
+	cd vagrant && vagrant up
