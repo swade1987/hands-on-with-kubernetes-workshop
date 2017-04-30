@@ -28,3 +28,9 @@ To remove the droplets from Digital Ocean execute the following **from your virt
 $ cd /home/vagrant/hands-on-with-kubernetes-workshop/terraform
 $ terraform destroy --force
 ```
+
+To remove the virtual machine **from your local machine** execute the following command:
+
+```
+$ make destroy-vagrant-box
+```
