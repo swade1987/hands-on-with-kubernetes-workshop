@@ -2,7 +2,7 @@
 
 ## 1. Spin up our Vagrant box
 
-To make life easier we will be running workshop from a virtual machine, please exeucte the following commands:
+To make life easier we will be running from a virtual machine, please execute the following commands:
 
 ```
 $ make vagrant-box
