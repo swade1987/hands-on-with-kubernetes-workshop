@@ -9,3 +9,4 @@ runs
 kismatic
 kubeconfig
 provision
+/vagrant/.vagrant/*
