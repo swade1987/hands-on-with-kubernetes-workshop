@@ -1,6 +1,6 @@
 # Hands on with Kubernetes Workshops
 
-The following repository will create you a Kubernetes cluster using the following:
+The following repo will create you a Kubernetes cluster using the following:
 
 1. Digital Ocean for the underlying infrastructure
 2. Terraform to create the infrastructure
