@@ -19,7 +19,18 @@ variable cluster_tag {
 }
 ```
 
-## 3. Create Infrastructure
+## 3. Generate New RSA keypair
+
+We are going to need to generate a new RSA keypair to authenticate to the ubuntu machines.
+
+Note: Windows users should use `gitbash` and Mac will use `terminal`
+
+```
+$ cd ssh
+$ ssh-keygen -f cluster.pem
+```
+
+## 4. Create Infrastructure
 
 Before executing Terraform you need to obtain your Digital Ocean token [here](https://cloud.digitalocean.com/settings/api/tokens)
 
@@ -38,6 +49,6 @@ To apply the changes execute the following commands:
 $ terraform apply
 ```
 
-## 4. Provisioning the Kubernetes cluster using Kismatic
+## 5. Provisioning the Kubernetes cluster using Kismatic
 
 To provision the cluster follow the steps [here](4-accessing-the-bootstrap-node.md)
