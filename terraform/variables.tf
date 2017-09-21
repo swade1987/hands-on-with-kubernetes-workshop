@@ -13,7 +13,7 @@ variable "digital_ocean_token" {
 # Bangalore - blr1
 variable region {
   description = "Region to launch in"
-  default     = "lon1"
+  default     = "nyc1"
 }
 
 variable image {
@@ -23,7 +23,7 @@ variable image {
 
 variable cluster_tag {
   description = "A unique tag for the cluster"
-  default     = "hands-on-kubernetes-workshop"
+  default     = "firstname-lastname"
 }
 
 variable droplet_size {
