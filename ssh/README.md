@@ -1,1 +1,1 @@
-Generate RSA Key-Pair and add to this folder.
+Generate RSA key-pair and add to this folder.
