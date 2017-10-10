@@ -37,6 +37,16 @@ resource "digitalocean_droplet" "bootstrap_node" {
       "/tmp/provision.sh args",
     ]
   }
+
+  provisioner "file" {
+    source      = "../ssh/cluster.pem"
+    destination = "~/hands-on-with-kubernetes-workshop/ssh/cluster.pem"
+  }
+
+  provisioner "file" {
+    source      = "../ssh/cluster.pem.pub"
+    destination = "~/hands-on-with-kubernetes-workshop/ssh/cluster.pem.pub"
+  }
 }
 
 # Create the Kubernetes master nodes (e.g. master1)
