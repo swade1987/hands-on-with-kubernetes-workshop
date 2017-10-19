@@ -46,8 +46,8 @@ resource "digitalocean_droplet" "bootstrap_node" {
 
   # Upload all the examples.
   provisioner "file" {
-    source      = "${path.module}/../examples/"
-    destination = "/root/examples"
+    source      = "${path.module}/../examples"
+    destination = "/root"
   }
 
   # Upload the kismatic-cluster.yaml
