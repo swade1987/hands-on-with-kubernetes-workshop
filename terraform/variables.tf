@@ -2,7 +2,7 @@ variable "digital_ocean_token" {
   description = "Your Digital Ocean token"
 }
 
-variable "ssh_key_name" {
+variable "unique_identifier" {
   default = "hands-on-workshop"
 }
 
