@@ -7,7 +7,6 @@ These steps are to be executed from the boostrap node itself!
 The following command will download and install Kismatic
 
 ```
-$ cd hands-on-with-kubernetes-workshop
 $ make get-dependencies
 ```
 
