@@ -4,7 +4,7 @@ These steps are to be executed from the boostrap node itself!
 
 ## Downloading the necessary dependencies
 
-The following command will download and install Kismatic and Kubectl
+The following command will download and install Kismatic
 
 ```
 $ cd hands-on-with-kubernetes-workshop
@@ -13,7 +13,7 @@ $ make get-dependencies
 
 ## Obtain the list of IP addresses
 
-All IP addresses used for the following steps can be found [here](https://cloud.digitalocean.com/tags/hands-on-kubernetes-workshop)**
+All IP addresses used for the following steps can be found from the output of Terraform.
 
 ## Kismatic-cluster.yaml changes
 
@@ -54,8 +54,8 @@ To validate all is well execute `kubectl get nodes`
 You should be shown:
 
 ```
-NAME       STATUS                     AGE
-ingress1   Ready,SchedulingDisabled   1h
-master1    Ready,SchedulingDisabled   1h
-worker1    Ready                      1h
+NAME       STATUS                     ROLES     AGE       VERSION
+ingress1   Ready,SchedulingDisabled   <none>    5m        v1.8.0
+master1    Ready,SchedulingDisabled   master    5m        v1.8.0
+worker1    Ready                      <none>    5m        v1.8.0
 ```

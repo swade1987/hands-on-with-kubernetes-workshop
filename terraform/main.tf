@@ -1,12 +1,7 @@
-# Create a new tag
-resource "digitalocean_tag" "cluster_tag" {
-  name = "${var.cluster_tag}"
-}
-
 # Upload SSH key which all instances will use.
 resource "digitalocean_ssh_key" "default" {
-  name       = "SSH Key for Terraform"
   public_key = "${file("${path.module}/../ssh/cluster.pem.pub")}"
+  name       = "${var.ssh_key_name}"
 }
 
 # Create the bootstrap node
@@ -16,7 +11,6 @@ resource "digitalocean_droplet" "bootstrap_node" {
   region             = "${var.region}"
   size               = "${var.droplet_size}"
   ssh_keys           = ["${digitalocean_ssh_key.default.id}"]
-  tags               = ["${digitalocean_tag.cluster_tag.id}"]
   private_networking = true
 
   connection {
@@ -37,6 +31,31 @@ resource "digitalocean_droplet" "bootstrap_node" {
       "/tmp/provision.sh args",
     ]
   }
+
+  # Upload the SSH key required to interact with the cluster.
+  provisioner "file" {
+    source      = "${path.module}/../ssh/cluster.pem"
+    destination = "/root/cluster.pem"
+  }
+
+  # Upload the Makefile to allow for a nice abstraction.
+  provisioner "file" {
+    source      = "${path.module}/../Makefile"
+    destination = "/root/Makefile"
+  }
+
+  # Upload all the examples.
+  provisioner "file" {
+    source      = "${path.module}/../examples"
+    destination = "/root"
+  }
+
+  # Upload the kismatic-cluster.yaml
+  provisioner "file" {
+    source      = "${path.module}/../kismatic-cluster.yaml"
+    destination = "/root/kismatic-cluster.yaml"
+  }
+
 }
 
 # Create the Kubernetes master nodes (e.g. master1)
@@ -47,7 +66,6 @@ resource "digitalocean_droplet" "master_nodes" {
   region             = "${var.region}"
   size               = "${var.droplet_size}"
   ssh_keys           = ["${digitalocean_ssh_key.default.id}"]
-  tags               = ["${digitalocean_tag.cluster_tag.id}"]
   private_networking = true
 }
 
@@ -59,7 +77,6 @@ resource "digitalocean_droplet" "etcd_nodes" {
   region             = "${var.region}"
   size               = "${var.droplet_size}"
   ssh_keys           = ["${digitalocean_ssh_key.default.id}"]
-  tags               = ["${digitalocean_tag.cluster_tag.id}"]
   private_networking = true
 }
 
@@ -71,7 +88,6 @@ resource "digitalocean_droplet" "worker_nodes" {
   region             = "${var.region}"
   size               = "${var.droplet_size}"
   ssh_keys           = ["${digitalocean_ssh_key.default.id}"]
-  tags               = ["${digitalocean_tag.cluster_tag.id}"]
   private_networking = true
 }
 
@@ -83,6 +99,5 @@ resource "digitalocean_droplet" "ingress_nodes" {
   region             = "${var.region}"
   size               = "${var.droplet_size}"
   ssh_keys           = ["${digitalocean_ssh_key.default.id}"]
-  tags               = ["${digitalocean_tag.cluster_tag.id}"]
   private_networking = true
 }

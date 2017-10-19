@@ -1,36 +1,28 @@
 # Build the Kubernetes cluster
 
-## 1. Changing cluster node location
+## 1. Changing cluster node location and ssh keypair name
 
 It is possible to change the physical location of the nodes created within Digital Ocean.
 
 This is possible by changing the `region` variable within `/terraform/variables.tf`
 
-## 2. Modify Cluster Tag
+Additionally change the `ssh_key_name` variable within `/terraform/variables.tf`
 
-We need to modify the cluster tag to refect a unique name.
+## 2. Generate new SSH keypair
 
-Open `/terraform/variables.tf` and modify the `cluster_tag` variable to reflect your name.
+Before creating our infrastructure we need to create an SSH keypair.
 
-```
-variable cluster_tag {
-  description = "A unique tag for the cluster"
-  default     = "YOUR-NAME"
-}
-```
-
-## 3. Generate New RSA keypair
-
-We are going to need to generate a new RSA keypair to authenticate to the ubuntu machines.
-
-Note: Windows users should use `gitbash` and Mac will use `terminal`
+This key will be used by both Terraform and the Kismatic Toolkit. To create this execute:
 
 ```
-$ cd ssh
-$ ssh-keygen -f cluster.pem
+$ mkdir ssh
+$ cd ssh && ssh-keygen -t rsa -f cluster.pem -N ""
+$ chmod 600 ssh/cluster.pem
 ```
 
-## 4. Create Infrastructure
+Note: Windows users should use `gitbash`
+
+## 3. Create Infrastructure
 
 Before executing Terraform you need to obtain your Digital Ocean token [here](https://cloud.digitalocean.com/settings/api/tokens)
 
@@ -40,6 +32,7 @@ Note: You will need to paste in the Digital Ocean Token during the Terraform exe
 
 ```
 $ cd terraform
+$ terraform init
 $ terraform plan
 ```
 
@@ -49,6 +42,6 @@ To apply the changes execute the following commands:
 $ terraform apply
 ```
 
-## 5. Provisioning the Kubernetes cluster using Kismatic
+## 4. Provisioning the Kubernetes cluster using Kismatic
 
 To provision the cluster follow the steps [here](4-accessing-the-bootstrap-node.md)
