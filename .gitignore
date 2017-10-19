@@ -9,3 +9,5 @@ runs
 kismatic
 kubeconfig
 provision
+
+.idea
