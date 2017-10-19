@@ -1,7 +1,8 @@
 # Compiled files
 .DS_Store
-terraform/*.tfstate
-terraform/*.tfstate.backup
+**/*.tfstate
+**/*.tfstate.backup
+terraform/.terraform/*
 ansible
 cfssl
 generated
@@ -9,5 +10,5 @@ runs
 kismatic
 kubeconfig
 provision
-
+ssh/
 .idea
