@@ -2,26 +2,20 @@
 
 These steps are to be executed from the boostrap node itself!
 
-## 1. Navigate to the repository directory on the server
-
-```
-$ cd /root/hands-on-with-kubernetes-workshop
-```
-
-## 2. Execute the Kubernetes service and first deployment
+## 1. Execute the Kubernetes service and first deployment
 
 ```
 $ kubectl apply -f examples/rolling-deployment/service.yaml
 $ kubectl apply -f examples/rolling-deployment/deployment-v1.0.yaml
 ```
 
-## 3. Display the pods running which are serving our application
+## 2. Display the pods running which are serving our application
 
 ```
 $ kubectl get pods -o wide
 ```
 
-## 4. Obtain the port on the worker node
+## 3. Obtain the port on the worker node
 
 ```
 $ kubectl get services
@@ -36,11 +30,11 @@ k8s-workshop-site   172.17.149.128   <nodes>       80:32233/TCP   13s
 kubernetes          172.17.0.1       <none>        443/TCP        7m
 ```
 
-## 5. Obtain the IP addresses of the worker node in Digital Ocean
+## 4. Obtain the IP addresses of the worker node in Digital Ocean
 
 To obtain the worker node Ip address browse [here](https://cloud.digitalocean.com/tags/hands-on-kubernetes-workshop)
 
-## 6. Browse to version 1.0 of the website
+## 5. Browse to version 1.0 of the website
 
 Now from your browser browse to `http://<worker ip>:nodePort`
 
@@ -50,7 +44,7 @@ Note: Port `32233` is shown as being the NodePort used after we executed `kubect
 
 You should now see "version 1.0" displayed on the webpage.
 
-## 7. Deploy version 1.1 of the website
+## 6. Deploy version 1.1 of the website
 
 Execute the following command from the bootstrap node:
 
