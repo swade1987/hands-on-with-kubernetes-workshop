@@ -6,29 +6,19 @@ It is possible to change the physical location of the nodes created within Digit
 
 This is possible by changing the `region` variable within `/terraform/variables.tf`
 
-## 2. Modify Cluster Tag
+## 2. Generate new SSH keypair
 
-We need to modify the cluster tag to refect a unique name.
+Before creating our infrastructure we need to create an SSH keypair.
 
-Open `/terraform/variables.tf` and modify the `cluster_tag` variable to reflect your name.
-
-```
-variable cluster_tag {
-  description = "A unique tag for the cluster"
-  default     = "YOUR-NAME"
-}
-```
-
-## 3. Generate New RSA keypair
-
-We are going to need to generate a new RSA keypair to authenticate to the ubuntu machines.
-
-Note: Windows users should use `gitbash` and Mac will use `terminal`
+This key will be used by both Terraform and the Kismatic Toolkit. To create this execute:
 
 ```
-$ cd ssh
-$ ssh-keygen -f cluster.pem
+$ mkdir ssh
+$ cd ssh && ssh-keygen -t rsa -f cluster.pem -N ""
+$ chmod 600 ssh/cluster.pem
 ```
+
+Note: Windows users should use `gitbash`
 
 ## 4. Create Infrastructure
 
@@ -40,6 +30,7 @@ Note: You will need to paste in the Digital Ocean Token during the Terraform exe
 
 ```
 $ cd terraform
+$ terraform init
 $ terraform plan
 ```
 
