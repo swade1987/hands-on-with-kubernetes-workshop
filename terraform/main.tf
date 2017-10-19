@@ -1,7 +1,12 @@
 # Upload SSH key which all instances will use.
 resource "digitalocean_ssh_key" "default" {
   public_key = "${file("${path.module}/../ssh/cluster.pem.pub")}"
-  name       = "${var.ssh_key_name}"
+  name       = "${var.unique_identifier}"
+}
+
+# Create a new tag
+resource "digitalocean_tag" "cluster_tag" {
+  name = "${var.unique_identifier}"
 }
 
 # Create the bootstrap node
@@ -12,6 +17,7 @@ resource "digitalocean_droplet" "bootstrap_node" {
   size               = "${var.droplet_size}"
   ssh_keys           = ["${digitalocean_ssh_key.default.id}"]
   private_networking = true
+  tags               = ["${digitalocean_tag.cluster_tag.id}"]
 
   connection {
     type        = "ssh"
@@ -66,6 +72,7 @@ resource "digitalocean_droplet" "master_nodes" {
   region             = "${var.region}"
   size               = "${var.droplet_size}"
   ssh_keys           = ["${digitalocean_ssh_key.default.id}"]
+  tags               = ["${digitalocean_tag.cluster_tag.id}"]
   private_networking = true
 }
 
@@ -77,6 +84,7 @@ resource "digitalocean_droplet" "etcd_nodes" {
   region             = "${var.region}"
   size               = "${var.droplet_size}"
   ssh_keys           = ["${digitalocean_ssh_key.default.id}"]
+  tags               = ["${digitalocean_tag.cluster_tag.id}"]
   private_networking = true
 }
 
@@ -88,6 +96,7 @@ resource "digitalocean_droplet" "worker_nodes" {
   region             = "${var.region}"
   size               = "${var.droplet_size}"
   ssh_keys           = ["${digitalocean_ssh_key.default.id}"]
+  tags               = ["${digitalocean_tag.cluster_tag.id}"]
   private_networking = true
 }
 
@@ -99,5 +108,6 @@ resource "digitalocean_droplet" "ingress_nodes" {
   region             = "${var.region}"
   size               = "${var.droplet_size}"
   ssh_keys           = ["${digitalocean_ssh_key.default.id}"]
+  tags               = ["${digitalocean_tag.cluster_tag.id}"]
   private_networking = true
 }
