@@ -1,5 +1,7 @@
 # Provisioning the Kubernetes cluster
 
+## IMPORTANT
+
 These steps are to be executed from the boostrap node itself!
 
 ## Downloading the necessary dependencies
@@ -26,7 +28,7 @@ $ nano kismatic-cluster.yaml
 
 Note: There **must** be space between the `:` and the ip address you enter!
 
-Add the IP address of Master1 to `ip`, `load_balanced_fqdn` and `load_balanced_short_name` below
+Add the IP address of Master1 to `ip`, `load_balanced_fqdn` and `load_balanced_short_name`  see below
 
 ```
 master:

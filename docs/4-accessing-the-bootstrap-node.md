@@ -15,10 +15,12 @@ master_node_ips = 138.68.173.48
 worker_node_ips = 138.68.173.52
 ```
 
-From a new tab, browse to the repo location and execute the following command:
+## SSH into the bootstrap node
 
-```
-$ ssh -i ssh/cluster.pem root@<bootstrap_node_ip>
-```
+* Execute the command `pwd` and copy the output
+* Open a new terminal tab
+* Then `cd` to that directory (e.g. `cd github.com/apprenda/hands-on-with-kubernetes-workshop`)
+* Execute `pwd` you should see `hands-on-with-kubernetes-workshop` in the output
+* Then execute the following command: `ssh -i ssh/cluster.pem root@<bootstrap_node_ip>`
 
 To provision the cluster click [here](5-provision-cluster.md)
