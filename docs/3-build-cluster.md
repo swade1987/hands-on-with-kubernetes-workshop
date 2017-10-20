@@ -1,5 +1,15 @@
 # Build the Kubernetes cluster
 
+## Prerequisite
+
+All commands need to be executed from the repositories root directory.
+
+When you execute `pwd` you should see `hands-on-with-kubernetes-workshop` (see below):
+
+```
+github.com/apprenda/hands-on-with-kubernetes-workshop
+```
+
 ## 1. Changing cluster node location
 
 It is possible to change the physical location of the nodes created within Digital Ocean.
@@ -24,7 +34,7 @@ If on Windows execute the following commands via gitbash:
 
 ```
 $ mkdir ssh
-$ cd ssh && ssh-keygen -t rsa -f cluster.pem -N ""
+$ ssh-keygen -t rsa -f ssh/cluster.pem -N ""
 $ chmod 600 ssh/cluster.pem
 ```
 
@@ -41,9 +51,7 @@ If you are using a Macbook or Linux, execute: `make cluster`.
 If on Windows execute the following commands via gitbash:
 
 ```
-$ cd terraform
-$ terraform init
-$ terraform apply
+$ cd terraform && terraform init && terraform apply
 ```
 
 ## 5. Provisioning the Kubernetes cluster using Kismatic
