@@ -27,7 +27,7 @@ variable image {
 
 variable droplet_size {
   description = "Size of the droplets"
-  default     = "1gb"
+  default     = "4gb"
 }
 
 variable master_count {
