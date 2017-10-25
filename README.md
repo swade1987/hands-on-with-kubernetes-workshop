@@ -1,6 +1,6 @@
 # Hands on with Kubernetes Workshops
 
-The following repository will create you a Kubernetes cluster using the following:
+The following repo will create you a Kubernetes cluster using the following:
 
 
 1. [Digital Ocean](https://www.digitalocean.com/) for the underlying infrastructure.
