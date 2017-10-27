@@ -179,7 +179,7 @@ etcd:
   # left blank.
   nodes:
   - host: etcd1
-    ip:
+    ip: ${etcd_ip}
 
 # Master nodes are the ones that run the Kubernetes control plane components.
 master:
@@ -187,28 +187,28 @@ master:
 
   # If you have set up load balancing for master nodes, enter the FQDN name here.
   # Otherwise, use the IP address of a single master node.
-  load_balanced_fqdn:
+  load_balanced_fqdn: ${master_ip}
 
   # If you have set up load balancing for master nodes, enter the short name here.
   # Otherwise, use the IP address of a single master node.
-  load_balanced_short_name:
+  load_balanced_short_name: ${master_ip}
   nodes:
   - host: master1
-    ip:
+    ip: ${master_ip}
 
 # Worker nodes are the ones that will run your workloads on the cluster.
 worker:
   expected_count: 1
   nodes:
   - host: worker1
-    ip:
+    ip: ${worker_ip}
 
 # Ingress nodes will run the ingress controllers.
 ingress:
   expected_count: 1
   nodes:
   - host: ingress1
-    ip:
+    ip: ${ingress_ip}
 
 # Storage nodes will be used to create a distributed storage cluster that can
 # be consumed by your workloads.

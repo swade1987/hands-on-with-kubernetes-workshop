@@ -18,29 +18,19 @@ All IP addresses used for the following steps can be found from the output of Te
 
 ## Kismatic-cluster.yaml changes
 
-Now update the `kismatic-cluster.yaml` in the root directory of the repo with the following changes:
+If you `less kismatic-cluster.yaml` and scroll to the bottom you should see that Terraform has interpolated the IP addresses for the nodes.
 
-This can be done by executing the following command:
-
-```
-$ nano kismatic-cluster.yaml
-```
-
-Note: There **must** be space between the `:` and the ip address you enter!
-
-Add the IP address of Master1 to `ip`, `load_balanced_fqdn` and `load_balanced_short_name`  see below
+Here is what you would see for the master node where `<master_ip_address>` will be your master's IP address:
 
 ```
 master:
   expected_count: 1
   nodes:
   - host: master1
-    ip:
-  load_balanced_fqdn:
-  load_balanced_short_name:
+    ip: <master_ip_address>
+  load_balanced_fqdn: <master_ip_address>
+  load_balanced_short_name: <master_ip_address>
 ```
-
-Update the remainder of the IP address in the `kismatic-cluster.yaml` under `etcd`, 'ingress' and `worker`.
 
 ## Provision the cluster using Kismatic
 
