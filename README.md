@@ -29,3 +29,7 @@ To remove the droplets from Digital Ocean execute the following from your local 
 $ cd terraform
 $ terraform destroy --force
 ```
+
+## Upgrading Kismatic
+
+A list of steps to upgrade the version of Kismatic used can be found [here](docs/6-upgrading-kismatic.md)
