@@ -2,7 +2,7 @@
 
 ## Prerequisite
 
-All commands need to be executed from the repositories root directory.
+All commands need to be executed from the repositories root directory via Terminal or Git Bash.
 
 When you execute `pwd` you should see `hands-on-with-kubernetes-workshop` (see below):
 
@@ -33,9 +33,7 @@ If you are using a Macbook or Linux, execute: `make ssh-keypair`.
 If on Windows execute the following commands via gitbash:
 
 ```
-$ mkdir ssh
-$ ssh-keygen -t rsa -f ssh/cluster.pem -N ""
-$ chmod 600 ssh/cluster.pem
+$ make ssh-keypair
 ```
 
 ## 4. Create Infrastructure
@@ -46,12 +44,10 @@ To see the changes which are going to be made execute the following commands:
 
 Note: You will need to paste in the Digital Ocean Token during the Terraform execution.
 
-If you are using a Macbook or Linux, execute: `make cluster`.
-
-If on Windows execute the following commands via gitbash:
+Execute the following commands via the Terminal or Git Bash:
 
 ```
-$ cd terraform && terraform init && terraform apply
+$ make cluster
 ```
 
 ## 5. Provisioning the Kubernetes cluster using Kismatic
