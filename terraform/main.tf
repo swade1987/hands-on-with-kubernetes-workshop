@@ -11,7 +11,7 @@ resource "digitalocean_tag" "cluster_tag" {
 
 # Interpolate the generated values into the kismatic-cluster.yaml
 data "template_file" "kismatic_cluster" {
-  template = "${file("${path.module}/../kismatic-cluster.yaml.tpl")}"
+  template = "${file("${path.module}/user-data/kismatic-cluster.yaml.tpl")}"
 
   vars {
     etcd_ip = "${digitalocean_droplet.etcd_nodes.0.ipv4_address}"
@@ -38,17 +38,9 @@ resource "digitalocean_droplet" "bootstrap_node" {
     timeout     = "2m"
   }
 
-  provisioner "file" {
-    source      = "provision.sh"
-    destination = "/tmp/provision.sh"
-  }
-
-  provisioner "remote-exec" {
-    inline = [
-      "chmod +x /tmp/provision.sh",
-      "/tmp/provision.sh args",
-    ]
-  }
+  # ########################################################
+  # Upload all the files and directories required.
+  # ########################################################
 
   # Upload the SSH key required to interact with the cluster.
   provisioner "file" {
@@ -74,6 +66,40 @@ resource "digitalocean_droplet" "bootstrap_node" {
     destination = "/root/kismatic-cluster.yaml"
   }
 
+  # Upload the bootstrap provisioning script
+  provisioner "file" {
+    source      = "${path.module}/user-data/bootstrap-provisioning-script.sh"
+    destination = "/root/bootstrap-provisioning-script.sh"
+  }
+
+  # Upload the kismatic tar file.
+  provisioner "file" {
+    source      = "${path.module}/user-data/${var.kismatic_tar_file}"
+    destination = "/root/${var.kismatic_tar_file}"
+  }
+
+  # ########################################################
+  # Execute the necessary commands to setup the cluster.
+  # ########################################################
+
+  provisioner "remote-exec" {
+    inline = [
+      "chmod +x /root/bootstrap-provisioning-script.sh",
+      "/root/bootstrap-provisioning-script.sh args",
+    ]
+  }
+
+  # Extract the Kismatic tar file and setup both Kubectl and Helm
+  provisioner "remote-exec" {
+    inline = [
+      "tar -xvzf ${var.kismatic_tar_file}",
+      "cp helm /usr/local/bin/helm",
+      "cp kubectl /usr/local/bin/kubectl",
+      "echo 'source <(kubectl completion bash)' >> ~/.bashrc",
+      "cp kismatic /usr/local/bin/kismatic",
+      "rm ${var.kismatic_tar_file}"
+    ]
+  }
 }
 
 # Create the Kubernetes master nodes (e.g. master1)

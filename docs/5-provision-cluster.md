@@ -4,19 +4,7 @@
 
 These steps are to be executed from the boostrap node itself!
 
-## Downloading the necessary dependencies
-
-The following command will download and install Kismatic
-
-```
-$ make get-dependencies
-```
-
-## Obtain the list of IP addresses
-
-All IP addresses used for the following steps can be found from the output of Terraform.
-
-## Kismatic-cluster.yaml changes
+## Review the kismatic-cluster.yaml changes
 
 If you `less kismatic-cluster.yaml` and scroll to the bottom you should see that Terraform has interpolated the IP addresses for the nodes.
 
@@ -46,7 +34,7 @@ You should be shown:
 
 ```
 NAME       STATUS                     ROLES     AGE       VERSION
-ingress1   Ready,SchedulingDisabled   <none>    5m        v1.8.0
-master1    Ready,SchedulingDisabled   master    5m        v1.8.0
-worker1    Ready                      <none>    5m        v1.8.0
+ingress1   Ready,SchedulingDisabled   <none>    5m        v1.8.2
+master1    Ready,SchedulingDisabled   master    5m        v1.8.2
+worker1    Ready                      <none>    5m        v1.8.2
 ```

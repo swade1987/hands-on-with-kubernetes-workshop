@@ -27,16 +27,17 @@ Once Chocolatey is installed execute the following commands:
 ```
 $ choco install terraform -y
 $ choco install git.install -y
+$ choco install make -y
 ```
 
-## 2. Pageant
+## 2. Clone the repo
 
-Download and install Pageant (an SSH authentication agent) from [here](http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
+Now from *Git Bash* clone the repo by executing `git clone https://github.com/apprenda/hands-on-with-kubernetes-workshop.git`
 
-## 3. Clone the repo
-
-Now clone the repo by executing `git clone https://github.com/apprenda/hands-on-with-kubernetes-workshop.git`
-
-## 4. Digital Ocean account
+## 3. Digital Ocean account
 
 You will also require an account on [https://www.digitalocean.com/](https://www.digitalocean.com/)
+
+## 4. Construct the infrastructure on Digital Ocean
+
+To construct the cluster follow the steps [here](3-build-cluster.md)

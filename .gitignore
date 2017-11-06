@@ -2,13 +2,7 @@
 .DS_Store
 **/*.tfstate
 **/*.tfstate.backup
-terraform/.terraform/*
-ansible
-cfssl
-generated
-runs
-kismatic
-kubeconfig
-provision
+terraform/.terraform/
 ssh/
 .idea
+terraform/.terraform.*

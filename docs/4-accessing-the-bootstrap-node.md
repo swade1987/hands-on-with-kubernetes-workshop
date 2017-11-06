@@ -7,12 +7,11 @@ Apply complete! Resources: 6 added, 0 changed, 0 destroyed.
 
 Outputs:
 
-bootstrap_node_ip = 138.68.173.59
-bootstrap_ssh_command = ssh -i ssh/cluster.pem root@138.68.173.59
-etcd_node_ips = 138.68.173.58
-ingress_node_ips = 138.68.173.47
-master_node_ips = 138.68.173.48
-worker_node_ips = 138.68.173.52
+bootstrap_ssh_command = ssh -i ssh/cluster.pem root@178.62.73.246
+ingress_node_ip = 178.62.14.241
+kubernetes_dashboard_url = https://178.62.12.143:6443/ui
+master_node_ip = 178.62.12.143
+worker_node_ip = 178.62.61.186
 ```
 
 ## SSH into the bootstrap node

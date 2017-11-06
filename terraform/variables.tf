@@ -6,6 +6,10 @@ variable "unique_identifier" {
   default = "hands-on-workshop"
 }
 
+variable "kismatic_tar_file" {
+  default = "kismatic-v1.6.1-linux-amd64.tar.gz"
+}
+
 # possible options
 # New York - nyc1, nyc2, nyc3
 # San Fransico - sfo1, sfo2
