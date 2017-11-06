@@ -37,3 +37,7 @@ Now from *Git Bash* clone the repo by executing `git clone https://github.com/ap
 ## 3. Digital Ocean account
 
 You will also require an account on [https://www.digitalocean.com/](https://www.digitalocean.com/)
+
+## 4. Construct the infrastructure on Digital Ocean
+
+To construct the cluster follow the steps [here](3-build-cluster.md)
