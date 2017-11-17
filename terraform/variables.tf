@@ -7,7 +7,7 @@ variable "unique_identifier" {
 }
 
 variable "kismatic_tar_file" {
-  default = "kismatic-v1.6.1-linux-amd64.tar.gz"
+  default = "kismatic-v1.6.2-linux-amd64.tar.gz"
 }
 
 # possible options
