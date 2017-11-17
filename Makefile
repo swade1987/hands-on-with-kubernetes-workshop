@@ -1,5 +1,3 @@
-KISMATIC_VERSION=1.6.0
-
 ssh-keypair:
 	mkdir ssh
 	cd ssh && ssh-keygen -t rsa -f cluster.pem -N ""
