@@ -49,12 +49,6 @@ resource "digitalocean_droplet" "bootstrap_node" {
     destination = "/root/bootstrap-provisioning-script.sh"
   }
 
-  # Upload the kismatic tar file.
-  provisioner "file" {
-    source      = "${path.module}/user-data/${var.kismatic_tar_file}"
-    destination = "/root/${var.kismatic_tar_file}"
-  }
-
   # ########################################################
   # Execute the necessary commands to setup the cluster.
   # ########################################################
@@ -69,12 +63,13 @@ resource "digitalocean_droplet" "bootstrap_node" {
   # Extract the Kismatic tar file and setup both Kubectl and Helm
   provisioner "remote-exec" {
     inline = [
-      "tar -xvzf ${var.kismatic_tar_file}",
+      "wget https://github.com/apprenda/kismatic/releases/download/${var.kismatic_version}/kismatic-${var.kismatic_version}-linux-amd64.tar.gz",
+      "tar xvf kismatic-${var.kismatic_version}-linux-amd64.tar.gz",
       "cp helm /usr/local/bin/helm",
       "cp kubectl /usr/local/bin/kubectl",
       "echo 'source <(kubectl completion bash)' >> ~/.bashrc",
       "cp kismatic /usr/local/bin/kismatic",
-      "rm ${var.kismatic_tar_file}"
+      "rm kismatic-${var.kismatic_version}-linux-amd64.tar.gz"
     ]
   }
 }
