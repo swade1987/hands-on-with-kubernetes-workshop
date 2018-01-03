@@ -45,7 +45,7 @@ $ kubectl scale deployment resource-quota-demo --replicas=5
 
 Obtain the Master node IP address from the terraform output
 
-Now browse to `https://<master ip>:6443/ui`. E.g. `https://178.62.115.83:6443/ui`
+Now browse to `https://<master ip>:6443/ui`. E.g. `https://178.62.115.83:6443/ui`  and click `Skip`
 
 The username and password are as follows:
 

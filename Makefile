@@ -4,7 +4,7 @@ ssh-keypair:
 	chmod 600 ssh/cluster.pem
 
 cluster:
-	cd terraform && terraform init && terraform apply
+	cd terraform && terraform init && terraform apply -auto-approve
 
 provision-cluster:
 	chmod 600 cluster.pem
