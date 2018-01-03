@@ -6,8 +6,9 @@ variable "unique_identifier" {
   default = "hands-on-workshop"
 }
 
-variable "kismatic_tar_file" {
-  default = "kismatic-v1.7.0-linux-amd64.tar.gz"
+# IMPORTANT: Needs to include the 'v' at the front.
+variable "kismatic_version" {
+  default = "v1.7.0"
 }
 
 # possible options

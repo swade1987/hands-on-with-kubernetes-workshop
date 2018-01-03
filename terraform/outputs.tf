@@ -13,7 +13,3 @@ output "worker_node_ip" {
 output "ingress_node_ip" {
   value = "${join(",",digitalocean_droplet.ingress_nodes.*.ipv4_address)}"
 }
-
-output "kubernetes_dashboard_url" {
-  value = "https://${digitalocean_droplet.master_nodes.*.ipv4_address}:6443/ui"
-}

@@ -34,7 +34,7 @@ You should be shown:
 
 ```
 NAME       STATUS                     ROLES     AGE       VERSION
-ingress1   Ready,SchedulingDisabled   <none>    5m        v1.8.2
-master1    Ready,SchedulingDisabled   master    5m        v1.8.2
-worker1    Ready                      <none>    5m        v1.8.2
+ingress1   Ready,SchedulingDisabled   <none>    5m        v1.9.0
+master1    Ready,SchedulingDisabled   master    5m        v1.9.0
+worker1    Ready                      <none>    5m        v1.9.0
 ```
